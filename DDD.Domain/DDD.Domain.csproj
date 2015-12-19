@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\SysDepartment.cs" />
     <Compile Include="Entity\SysMenu.cs" />
     <Compile Include="Entity\SysMenuSysRole.cs" />
     <Compile Include="Entity\SysPerson.cs" />
