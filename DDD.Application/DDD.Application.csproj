@@ -40,13 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SysRoleService.cs" />
+    <Compile Include="RoleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDD.Application.Interface\DDD.Application.Interface.csproj">
       <Project>{33ce2364-1f43-479b-be37-119e69e59ad8}</Project>
       <Name>DDD.Application.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Domain\DDD.Domain.csproj">
+      <Project>{045d3078-d6ce-4bb4-b9de-5db021bbf152}</Project>
+      <Name>DDD.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Infrastructure.Interface\DDD.Infrastructure.Interface.csproj">
+      <Project>{28f7fad4-14d0-4a7f-bff3-19ab42b574c8}</Project>
+      <Name>DDD.Infrastructure.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Infrastructure\DDD.Infrastructure.csproj">
+      <Project>{37a0704b-b3d4-42f1-b003-8da7e01f0a58}</Project>
+      <Name>DDD.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Repository\DDD.Repository.csproj">
+      <Project>{2c4b87d7-0d78-47bf-adfe-0a921ca5494a}</Project>
+      <Name>DDD.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DDD.Domain.Entity;
 
-namespace DDD.Domain.IRepository
+namespace DDD.Application.Interface
 {
-    public interface ISysRoleRepository: IRepository<SysRole>
+    public interface IRoleService
     {
+      Role  GetByName(int id);
     }
 }

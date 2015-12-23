@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DDD.Application.Interface;
+using DDD.Domain.Entity;
 using DDD.Infrastructure;
 
 namespace DDD.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private DDDContext db = new DDDContext();
+        //private IRoleService _roleService;
+        //public HomeController(IRoleService roleService)
+        //{
+        //    _roleService = roleService;
+        //}
+
         public ActionResult Index()
         {
-         var s=   db.SysRole.ToList();
-             
-            return View();
+
+            DDDContext db = new DDDContext();
+            var model = db.User.ToList();
+            return View(model);
         }
 
         public ActionResult About()
