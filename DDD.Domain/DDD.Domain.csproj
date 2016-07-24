@@ -63,6 +63,7 @@
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IRepository\IRepository.cs" />
+    <Compile Include="IRepository\IUserRepository.cs" />
     <Compile Include="IRepository\IRoleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

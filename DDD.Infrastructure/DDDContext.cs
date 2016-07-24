@@ -19,21 +19,21 @@ namespace DDD.Infrastructure
             : base("name=db_ddd")
         {
        Database.SetInitializer<DDDContext>(
-            new DDDContextInitializer()
-          // null
+          //  new DDDContextInitializer()
+          null
            );//初始化时删除数据库
         }
-        public DbSet<Role> Role { get; set; }
-        public DbSet<User> User { get; set; }
-        public DbSet<Department> Department { get; set; }
-        public DbSet<Menu> Menu { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Menu> Menus { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
          
-            modelBuilder.Entity<Role>().ToTable("tbRole");
-            modelBuilder.Entity<Menu>().ToTable("tbMenu");
-            modelBuilder.Entity<User>().ToTable("tbUser");
-            modelBuilder.Entity<Department>().ToTable("tbDepartment");
+            modelBuilder.Entity<Role>().ToTable("Role");
+            modelBuilder.Entity<Menu>().ToTable("Menu");
+            modelBuilder.Entity<User>().ToTable("User");
+            modelBuilder.Entity<Department>().ToTable("Department");
             
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();//去除复数形式的表名
         }
@@ -49,11 +49,11 @@ namespace DDD.Infrastructure
                          new Department() { Name = "后勤部", Code = "D003", ParentId = 0},
                            new Department() { Name = "人事部", Code = "D004", ParentId = 0},
                  };
-                q.ForEach(e => context.Department.Add(e));
+                q.ForEach(e => context.Departments.Add(e));
                 context.SaveChanges();
                 var u = new List<User>
                 {
-                    new User() { Name = "Jom", CreateTime =DateTime.Now, Sex = "男", Address = "重庆", Code = "001", DepartmentId = 1},
+                    new User() { Name = "Jom", CreateTime =DateTime.Now, Sex = "男", Address = "重庆", Code = "001", DepartmentId = 1,Password = "Jom"},
 
                     new User() { Name = "Eom", CreateTime =DateTime.Now, Sex = "男", Address = "重庆", Code = "002", DepartmentId = 1},
                     new User() { Name = "Qom", CreateTime =DateTime.Now, Sex = "男", Address = "上海", Code = "003", DepartmentId = 2},
@@ -69,7 +69,7 @@ namespace DDD.Infrastructure
                     new User() { Name = "Som", CreateTime =DateTime.Now, Sex = "男", Address = "重庆", Code = "013", DepartmentId = 1},
                     new User() { Name = "Dom", CreateTime =DateTime.Now, Sex = "男", Address = "上海", Code = "014", DepartmentId = 1},
                 };
-                 u.ForEach(s=>context.User.Add(s));
+                 u.ForEach(s=>context.Users.Add(s));
                 context.SaveChanges();
               
             }

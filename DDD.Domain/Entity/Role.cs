@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace DDD.Domain.Entity
 {
@@ -13,7 +15,7 @@ namespace DDD.Domain.Entity
         public string Description { get; set; } // Description
         public DateTime? CreateTime { get; set; } // CreateTime
         public DateTime? UpdateTime { get; set; } // UpdateTime
-
+      
         public virtual ICollection<Menu> Menus { get; set; }
         public virtual ICollection<User> Users { set; get; }
     }

@@ -15,7 +15,7 @@ namespace DDD.Application
         private IUnitOfWork _unitOfWork;
         private IRoleRepository _roleRepositorytRepository;
        
-
+        
         public RoleService(IUnitOfWork unitOfWork,
             IRoleRepository roleRepositorytRepository
            )
