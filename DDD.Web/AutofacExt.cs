@@ -29,7 +29,7 @@ namespace DDD.Web
             builder.RegisterType<RoleService>().As<IRoleService>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<UserRepository>().As<IUserRepository>();
-            // Register your MVC controllers.
+            // Register your MVC controllers.1
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             // OPTIONAL: Register model binders that require DI.
